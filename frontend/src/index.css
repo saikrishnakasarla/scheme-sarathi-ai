@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-telugu: 'Noto Sans Telugu', 'Inter', system-ui, sans-serif;
+  --font-sans: 'Inter', 'Noto Sans Telugu', system-ui, sans-serif;
+  
+  --color-brand-emerald: #047857;
+  --color-brand-forest: #064e3b;
+  --color-brand-saffron: #ea580c;
+  --color-brand-gold: #f59e0b;
+  --color-brand-cream: #fdfbf7;
+}
+
+:root {
+  --font-scale: 1;
+}
+
+body {
+  font-family: var(--font-telugu);
+  font-size: calc(1rem * var(--font-scale));
+  line-height: 1.6;
+  background-color: #faf9f6;
+  color: #1c1917;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  filter: contrast(135%);
+  --color-brand-emerald: #004d40;
+  --color-brand-forest: #00251a;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.high-contrast button,
+.high-contrast a,
+.high-contrast input,
+.high-contrast select {
+  border-width: 2px !important;
+  border-color: #000000 !important;
+}
+
+/* Rural Mode Enhancements */
+.rural-mode {
+  --font-scale: 1.15;
+}
+
+.rural-mode button,
+.rural-mode .interactive-target {
+  min-height: 56px;
+  min-width: 56px;
+  font-size: 1.15rem;
+}
+
+/* Voice Wave Animation */
+@keyframes voice-wave {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.voice-wave-bar {
+  animation: voice-wave 1s ease-in-out infinite;
+}
+
+.voice-wave-bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.voice-wave-bar:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.voice-wave-bar:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.voice-wave-bar:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/* Custom Scrollbar for Chat & Grids */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5d3cb;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #047857;
+}
